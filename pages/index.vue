@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="pageClass">
     <Canvas/>
     <pattern-unit
       v-for="pattern in patterns"
@@ -17,7 +17,12 @@ export default {
   components: { PatternUnit },
   name: 'IndexPage',
   computed: {
-    ...mapState(["patterns"])
+    ...mapState(["patterns"]),
+    pageClass: function(){
+      return [
+        "bg-slate-50",
+      ];
+    }
   },
 }
 </script>

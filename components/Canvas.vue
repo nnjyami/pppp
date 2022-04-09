@@ -1,5 +1,5 @@
 <template>
-  <div class="canvas">
+  <div :class="unitClass">
     <figure>
       <img
         v-for="pattern in selectedPatterns"
@@ -14,7 +14,20 @@
 import { mapState } from 'vuex';
 export default {
   computed: {
-    ...mapState(["selectedPatterns"])
+    ...mapState(["selectedPatterns"]),
+    unitClass(){
+      return [
+        "pattern",
+        "border-solid",
+        "border-2",
+        "flex",
+        "justify-center",
+        "m-2",
+        "p-2",
+        "rounded-sm",
+        "w-5/6",
+      ];
+    },
   },
   data() {
     return {

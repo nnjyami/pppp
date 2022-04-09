@@ -1,8 +1,6 @@
 <template>
   <div
-    class="pattern border-solid border-2 p-0.5 rounded-sm w-24"
-    :class="{
-    }">
+    :class="unitClass">
     <figure>
       <img
         :src="require(`~/assets/svg/${patternName}.svg`)"
@@ -19,7 +17,18 @@ export default {
   },
   computed: {
     unitClass(){
-    }
+      return [
+        "pattern",
+        "border-solid",
+        "border-2",
+        "flex",
+        "justify-center",
+        "m-2",
+        "p-2",
+        "rounded-sm",
+        "w-24",
+      ];
+    },
   },
   data() {
     return {
