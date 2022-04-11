@@ -1,10 +1,11 @@
 <template>
   <div :class="unitClass">
-    <figure>
+    <figure class="patternWrap">
       <img
         v-for="pattern in selectedPatterns"
-        :key="pattern.name"
-        :src="require(`~/assets/svg/${pattern.name}.svg`)"
+        :key="pattern"
+        :src="require(`~/assets/svg/${pattern}.svg`)"
+        class="patternImg"
         />
     </figure>
   </div>
@@ -35,3 +36,18 @@ export default {
   },
 };
 </script>
+
+<style lang="sass" scoped>
+.pattern
+  border-radius: var(--radius-size)
+  box-shadow: 0 0 40px rgba(0,0,0,.1)
+.patternWrap
+  position: relative
+  min-width: 30rem
+  min-height: 30rem
+.patternImg
+  position: absolute
+  left: 0
+  top: 0
+  width: 100%
+</style>
